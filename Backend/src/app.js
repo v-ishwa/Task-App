@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import pool from "./config/db.js";
 import authRoutes from "./routes/authRoutes.js";
+import taskRoutes from "./routes/taskRoutes.js";
 
 const app = express();
 
@@ -25,5 +26,6 @@ app.use(express.json());
 
 //routes
 app.use("/api/auth", authRoutes);
+app.use("/api/tasks", taskRoutes);
 
 export default app;
