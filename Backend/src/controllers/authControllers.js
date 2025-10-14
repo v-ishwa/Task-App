@@ -38,7 +38,7 @@ export const registerUser = async (req, res) => {
     );
 
     const newUser = result.rows[0];
-    const token = generateToken(newUser.id); // generate tokrn for registered user
+    const token = generateToken(newUser.id); // generate token for registered user
 
     return res
       .status(201)

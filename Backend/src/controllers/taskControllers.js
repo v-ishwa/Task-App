@@ -3,8 +3,8 @@ import pool from "../config/db.js";
 export const createTask = async (req, res) => {
   const { title, description, status, priority, progress } = req.body;
   const userId = req.user.id;
-  console.log(userId);
-  console.log(title, description, status, priority, progress );
+  // console.log(userId);
+  // console.log(title, description, status, priority, progress );
 
   if (!title || !description) {
     return res
@@ -80,7 +80,7 @@ export const updateTask = async (req, res) => {
     if (result.rows.length === 0)
       return res
         .status(404)
-        .json({ message: "Task not found or not authorized" });
+        .json({ message: "Error updating task" });
 
     res.json(result.rows[0]);
   } catch (error) {
@@ -102,7 +102,7 @@ export const deleteTask = async (req, res) => {
     if (result.rows.length === 0)
       return res
         .status(404)
-        .json({ message: "Task not found or not authorized" });
+        .json({ message: "Error deleting task or task not found" });
 
     res.json({ message: "Task deleted successfully" });
   } catch (error) {
