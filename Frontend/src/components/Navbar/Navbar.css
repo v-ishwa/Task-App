@@ -1,0 +1,33 @@
+.navbar {
+  height: 10vh;
+  width: auto;
+  background: #1ea974;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 70px;
+}
+
+.nav-heading{
+    color: rgb(246, 246, 246);
+}
+
+.navlink-div{
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.nav-right {
+    display: flex;
+    column-gap: 20vw;
+}
+
+.navlink {
+    text-decoration: none;
+    color: rgb(246, 246, 246);
+    font-size: 18px;
+}
+
+
