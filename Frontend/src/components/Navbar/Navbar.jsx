@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Navbar.css";
 import { NavLink } from "react-router-dom";
+import menu from "../../assets/menu.png";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <nav className="navbar">
+      <img src={menu} alt="" className="nav-menu" onClick={() => setIsMenuOpen(!isMenuOpen)} />
       <h1 className="nav-heading">Task App</h1>
       <div className="nav-right">
         <div className="navlink-div">
@@ -18,7 +22,7 @@ const Navbar = () => {
             About
           </NavLink>
         </div>
-        <img src="../../../public/vite.svg" alt="" />
+        <img className="nav-profile-pic" src="../../../public/vite.svg" alt="" />
       </div>
     </nav>
   );
