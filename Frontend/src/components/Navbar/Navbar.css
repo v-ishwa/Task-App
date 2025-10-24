@@ -28,6 +28,21 @@
   text-decoration: none;
   color: rgb(246, 246, 246);
   font-size: 18px;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+.navlink:hover {
+  background: #b3ecbb;
+  color: black;
+  transition: 300ms;
+}
+.navlink-active {
+  text-decoration: none;
+  background: #d2ffd8;
+  color: rgb(0, 74, 33);;
+  font-size: 18px;
+  padding: 2px 4px;
+  border-radius: 2px;
 }
 .nav-menu {
     display: none;

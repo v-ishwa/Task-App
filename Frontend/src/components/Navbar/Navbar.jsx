@@ -12,13 +12,13 @@ const Navbar = () => {
       <h1 className="nav-heading">Task App</h1>
       <div className="nav-right">
         <div className="navlink-div">
-          <NavLink to="/" className="navlink">
+          <NavLink to="/" className={({isActive}) => isActive ? "navlink-active" : "navlink" }>
             Home
           </NavLink>
-          <NavLink to="/profile" className="navlink">
+          <NavLink to="/profile" className={({isActive}) => isActive ? "navlink-active" : "navlink" }>
             Profile
           </NavLink>
-          <NavLink to="/about" className="navlink">
+          <NavLink to="/about" className={({isActive}) => isActive ? "navlink-active" : "navlink" }>
             About
           </NavLink>
         </div>

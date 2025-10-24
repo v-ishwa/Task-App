@@ -67,13 +67,13 @@ export const getTaskById = async (req, res) => {
 };
 
 export const updateTask = async (req, res) => {
-  const userId = req.user.id;
-  const { id } = req.params;
   const { title, description, status, priority, progress } = req.body;
+  const { id } = req.params;
+  const userId = req.user.id;
 
   try {
     const result = await pool.query(
-      "UPDATE tasks SET title = $1, description = $2, status = $3, priority = $4, progress = $5 where id = $6 and user_id = $7 RETURNING *",
+      "UPDATE tasks SET title = $1, description = $2, status = $3, priority = $4, progress = $5 WHERE id = $6 and user_id = $7 RETURNING *",
       [title, description, status, priority, progress, id, userId]
     );
 

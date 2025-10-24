@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../../slices/authSlice";
 import "./LoginPage.css";
 import { Link } from "react-router-dom";
 
@@ -9,16 +7,6 @@ const LoginPage = () => {
     email: "",
     password: "",
   });
-  // const dispatch = useDispatch();
-  // const { loading, error } = useSelector((state) => state.auth);
-
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-  //   const email = e.target.email.value;
-  //   const password = e.target.password.value;
-
-  //   dispatch(loginUser({ email, password }));
-  // };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -27,6 +15,7 @@ const LoginPage = () => {
       return { ...prev, [name]: value };
     });
   };
+
   return (
     <div className="auth-container">
       <h1 className="auth-heading">Login</h1>
@@ -51,7 +40,7 @@ const LoginPage = () => {
         <button className="auth-button">Login</button>
         </div>
       </form>
-      <p>Create an account <span><Link to="/register">Register</Link></span></p>
+      <p>Create an account <span><Link to="/register">Register</Link> </span></p>
     </div>
   );
 };

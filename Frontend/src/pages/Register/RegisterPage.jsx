@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { loginUser } from "../../slices/authSlice";
 import "./RegisterPage.css";
 
 const RegisterPage = () => {
@@ -10,16 +8,6 @@ const RegisterPage = () => {
     email: "",
     password: "",
   });
-  // const dispatch = useDispatch();
-  // const { loading, error } = useSelector((state) => state.auth);
-
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-  //   const email = e.target.email.value;
-  //   const password = e.target.password.value;
-
-  //   dispatch(loginUser({ email, password }));
-  // };
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -28,6 +16,7 @@ const RegisterPage = () => {
       return { ...prev, [name]: value };
     });
   };
+
   return (
     <div className="auth-container">
       <h1 className="auth-heading">Register</h1>
