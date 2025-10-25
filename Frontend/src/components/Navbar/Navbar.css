@@ -1,29 +1,28 @@
 .navbar {
   height: 10vh;
-  width: auto;
+  width: 100vw;
   background: #1ea974;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0px 70px;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
-
 .nav-heading {
   color: rgb(246, 246, 246);
 }
-
 .navlink-div {
   width: 40vw;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-
 .nav-right {
   display: flex;
   column-gap: 20vw;
 }
-
 .navlink {
   text-decoration: none;
   color: rgb(246, 246, 246);
@@ -39,27 +38,35 @@
 .navlink-active {
   text-decoration: none;
   background: #d2ffd8;
-  color: rgb(0, 74, 33);;
+  color: rgb(0, 74, 33);
   font-size: 18px;
   padding: 2px 4px;
   border-radius: 2px;
 }
 .nav-menu {
-    display: none;
+  display: none;
 }
 
 @media (max-width: 980px) {
+
   .navlink-div {
     width: 25vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-
   .navlink {
     text-decoration: none;
     color: rgb(246, 246, 246);
     font-size: 16px;
+  }
+  .navlink-active {
+    text-decoration: none;
+    background: #d2ffd8;
+    color: rgb(0, 74, 33);
+    font-size: 16px;
+    padding: 2px 4px;
+    border-radius: 2px;
   }
   .nav-heading {
     color: rgb(246, 246, 246);
@@ -71,17 +78,25 @@
 }
 
 @media (max-width: 750px) {
+
   .navlink-div {
     width: 30vw;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-
   .navlink {
     text-decoration: none;
     color: rgb(246, 246, 246);
     font-size: 14px;
+  }
+  .navlink-active {
+    text-decoration: none;
+    background: #d2ffd8;
+    color: rgb(0, 74, 33);
+    font-size: 14px;
+    padding: 2px 4px;
+    border-radius: 2px;
   }
   .nav-heading {
     color: rgb(246, 246, 246);
@@ -90,7 +105,6 @@
   .nav-profile-pic {
     width: 25px;
   }
-
   .nav-right {
     display: flex;
     column-gap: 15vw;
@@ -107,6 +121,7 @@
 }
 
 @media (max-width: 550px) {
+  
   .navbar {
     height: 10vh;
     width: auto;
