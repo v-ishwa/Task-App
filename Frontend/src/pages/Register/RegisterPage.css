@@ -1,48 +1,48 @@
 .auth-container {
-    height: 100vh;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    row-gap: 60px;
-    background: rgb(246, 246, 246);
+  height: 100vh;
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 60px;
+  background: rgb(246, 246, 246);
 }
 
 .auth-heading {
-    font-size: 50px;
+  font-size: 50px;
 }
 
 .auth-input-div {
-    display: flex;
-    flex-direction: column;
-    row-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
 }
 
 .auth-input {
-    color: rgb(102, 101, 101) ;
-    font-size: 16px;
-    padding: 10px 40px;
-    border: 1px solid rgb(199, 196, 196);
-    border-radius: 20px;
-    outline: none;
+  color: rgb(102, 101, 101);
+  font-size: 16px;
+  padding: 10px 40px;
+  border: 1px solid rgb(199, 196, 196);
+  border-radius: 20px;
+  outline: none;
 }
 
 .auth-button {
-    font-size: 16px;
-    background: #1ea974;
-    color: white;
-    border: none;
-    border-radius: 20px;
-    padding: 10px 40px;
+  font-size: 16px;
+  background: #1ea974;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 40px;
 }
 
 .auth-button:hover {
-    background: #49dca4;
-    cursor: pointer;
-    transition: 300ms;
+  background: #49dca4;
+  cursor: pointer;
+  transition: 300ms;
 }
 
 .auth-container p {
-    color: rgb(53, 53, 53);
+  color: rgb(53, 53, 53);
 }

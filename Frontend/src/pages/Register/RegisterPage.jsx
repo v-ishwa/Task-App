@@ -46,10 +46,15 @@ const RegisterPage = () => {
             value={userInput.password}
             onChange={handleChange}
           />
-        <button className="auth-button">Login</button>
+          <button className="auth-button">Login</button>
         </div>
       </form>
-      <p>Already have an account? <span><Link to="/login">Login</Link></span></p>
+      <p>
+        Already have an account?{" "}
+        <span>
+          <Link to="/login">Login</Link>
+        </span>
+      </p>
     </div>
   );
 };
