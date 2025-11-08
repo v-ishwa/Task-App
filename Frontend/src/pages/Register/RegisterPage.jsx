@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 import "./RegisterPage.css";
 
 const RegisterPage = () => {
@@ -8,19 +9,24 @@ const RegisterPage = () => {
     email: "",
     password: "",
   });
+  const { register, loading } = useAuth();
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-    console.log([name], ":", value);
     setUserInput((prev) => {
       return { ...prev, [name]: value };
     });
   };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    register(userInput);
+  }
+
   return (
     <div className="auth-container">
       <h1 className="auth-heading">Register</h1>
-      <form className="auth-form">
+      <form className="auth-form" onSubmit={handleSubmit}>
         <div className="auth-input-div">
           <input
             className="auth-input"
@@ -46,7 +52,7 @@ const RegisterPage = () => {
             value={userInput.password}
             onChange={handleChange}
           />
-          <button className="auth-button">Login</button>
+          <button className="auth-button" type="submit" disabled={loading}>{loading ? "...Loading" : "Register"}</button>
         </div>
       </form>
       <p>

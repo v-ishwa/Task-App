@@ -7,6 +7,7 @@ import RegisterPage from "./pages/Register/RegisterPage";
 import Layout from "./components/Layout/Layout";
 import ProfilePage from "./pages/Profile/ProfilePage";
 import AboutPage from "./pages/About/AboutPage";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
   const loggedIn = true;
@@ -16,10 +17,31 @@ const App = () => {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
-        <Route element={<Layout/>}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/about" element={<AboutPage />} />
+        <Route element={<Layout />}>
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <HomePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <ProtectedRoute>
+                <ProfilePage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <ProtectedRoute>
+                <AboutPage />
+              </ProtectedRoute>
+            }
+          />
         </Route>
       </Routes>
     </BrowserRouter>
