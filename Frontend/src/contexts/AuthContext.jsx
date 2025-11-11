@@ -1,11 +1,15 @@
-import { createContext, useState, useEffect, useContext } from "react";
+import { createContext, useState, useContext } from "react";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(() => {
+    return localStorage.getItem("user") || null;
+  });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+
+  const token = localStorage.getItem("token") || null;
 
   const register = async (userInfo) => {
     setLoading(true);
@@ -32,6 +36,7 @@ export const AuthProvider = ({ children }) => {
 
       return { success: true, data };
     } catch (error) {
+      console.log(error.message);
       setError(error.message);
     } finally {
       setLoading(false);
@@ -52,6 +57,7 @@ export const AuthProvider = ({ children }) => {
       });
 
       const data = await response.json();
+      console.log(data);
 
       if (!response.ok) {
         throw new Error(data.message || "Login Failed");
@@ -76,8 +82,6 @@ export const AuthProvider = ({ children }) => {
     setError(null);
   };
 
-  const isAuthenticated = !!user;
-
   const value = {
     user,
     loading,
@@ -85,7 +89,7 @@ export const AuthProvider = ({ children }) => {
     register,
     login,
     logout,
-    isAuthenticated,
+    token,
   };
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

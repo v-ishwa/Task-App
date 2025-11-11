@@ -4,6 +4,7 @@ import { generateToken } from "../utils/generateToken.js";
 
 export const registerUser = async (req, res) => {
   const { name, email, password } = req.body;
+  console.log(name, email, password);
 
   // check for empty fields
   if (!name || !email || !password)

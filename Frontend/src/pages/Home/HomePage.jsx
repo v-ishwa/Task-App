@@ -4,13 +4,11 @@ import edit from "../../assets/edit.png";
 import trash from "../../assets/trash.png";
 import view from "../../assets/view.png";
 import TaskCard from "../../components/TaskCard/TaskCard";
+import { useTask } from "../../contexts/TaskContext";
 
 const HomePage = () => {
-  const tasks = [
-    { id: 1, title: "omck", status: "pending" },
-    { id: 2, title: "omck", status: "pending" },
-    { id: 3, title: "omck", status: "pending" },
-  ];
+  const { tasks, getTasks } = useTask();
+
   return (
     <div className="home">
       <div className="home-container">
@@ -18,9 +16,11 @@ const HomePage = () => {
           <h1 className="heading">All Tasks</h1>
           <button className="add-task-button">+ Add Task</button>
         </div>
-        {tasks.map((task, _) => (
-          <TaskCard task={task}/>
-        ))}
+        {tasks.length === 0 ? (
+          <p>No Tasks Created...</p>
+        ) : (
+          tasks.map((task, _) => <TaskCard key={task.id} task={task} />)
+        )}
       </div>
     </div>
   );

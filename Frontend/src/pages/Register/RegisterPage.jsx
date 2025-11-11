@@ -18,10 +18,10 @@ const RegisterPage = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    register(userInput);
-  }
+    const result = await register(userInput);
+  };
 
   return (
     <div className="auth-container">
@@ -52,7 +52,9 @@ const RegisterPage = () => {
             value={userInput.password}
             onChange={handleChange}
           />
-          <button className="auth-button" type="submit" disabled={loading}>{loading ? "...Loading" : "Register"}</button>
+          <button className="auth-button" type="submit" disabled={loading}>
+            {loading ? "...Loading" : "Register"}
+          </button>
         </div>
       </form>
       <p>

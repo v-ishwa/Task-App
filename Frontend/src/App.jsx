@@ -8,15 +8,17 @@ import Layout from "./components/Layout/Layout";
 import ProfilePage from "./pages/Profile/ProfilePage";
 import AboutPage from "./pages/About/AboutPage";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { useAuth } from "./contexts/AuthContext";
 
 const App = () => {
-  const loggedIn = true;
+
   return (
     <BrowserRouter>
       <Toaster />
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
+
         <Route element={<Layout />}>
           <Route
             path="/"
@@ -43,6 +45,8 @@ const App = () => {
             }
           />
         </Route>
+        
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </BrowserRouter>
   );
